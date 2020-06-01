@@ -20,6 +20,12 @@ variable "listener_port" {
     type        = string
 }
 
+variable "host_header" {
+    description = "Host para adicionar na listener rule"
+    type        = string
+    default     = null
+}
+
 variable "health_check_path" {
     description = "Health check do target group"
     type        = string
