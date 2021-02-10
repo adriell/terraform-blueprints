@@ -43,5 +43,5 @@ data "aws_lb_listener" "selected_http" {
 
 #USERDATA
 data "template_file" "user_data" {
-  template = "${file("user-data.sh.tpl")}"
+  template = file("user-data.sh.tpl")
 }

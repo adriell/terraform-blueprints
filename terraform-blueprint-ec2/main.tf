@@ -1,5 +1,5 @@
 module "ec2" {
-  source = "/home/adriell/Documents/devops_labs/cloudops/terraform/terraform-modules/terraform-module-ec2/"
+  source = "git::ssh://git@github.com/adriell/terraform-module-ec2.git?ref=v1.0.0"
   
   name                   = var.name
   ami                    = data.aws_ami.amzn_linux.id

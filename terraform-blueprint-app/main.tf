@@ -1,6 +1,6 @@
 #Security Group
 module "sg" {
-  source = "/home/adriell/Documents/devops_labs/cloudops/terraform/terraform-modules/terraform-module-sg/"
+  source = "git::ssh://git@github.com/adriell/terraform-module-sg.git?ref=v1.0.0"
   
   name          = "${var.name}-sg"
   description   = var.description
@@ -12,7 +12,7 @@ module "sg" {
 
 #ALB
 module "alb-app" {
-    source = "/home/adriell/Documents/devops_labs/cloudops/terraform/terraform-modules/terraform-module-alb/"
+    source = "git::ssh://git@github.com/adriell/terraform-module-alb.git?ref=v1.0.0"
     
     enabled                   = var.enabled
     name                      = var.name
@@ -27,7 +27,7 @@ module "alb-app" {
 
 #ASG
 module "asg-app"{
-    source = "/home/adriell/Documents/devops_labs/cloudops/terraform/terraform-modules/terraform-module-asg/"
+    source = "git::ssh://git@github.com/adriell/terraform-module-asg.git?ref=v1.0.0"
 
     name                = var.name
     ami                 = data.aws_ami.amzn_linux.id

@@ -1,5 +1,5 @@
 module "alb"{
-    source = "/home/adriell/Documents/devops_labs/cloudops/terraform/terraform-modules/terraform-module-alb/"
+    source = "git::ssh://git@github.com/adriell/terraform-module-alb.git?ref=v1.0.0"
 
     name              = var.name
     subnet_ids        = data.terraform_remote_state.vpc.outputs.public_subnet_ids
